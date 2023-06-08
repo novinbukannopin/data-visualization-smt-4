@@ -1,3 +1,4 @@
+import altair
 import streamlit as st
 import numpy as np
 import pandas as pd
@@ -15,7 +16,9 @@ dataframe = pd.DataFrame(np.random.randn(10, 5),
 dataframe
 # linechart
 st.write('This is a line_chart.')
-st.line_chart(dataframe)
+st.line_chart(dataframe['col 0'])
+# c = altair.Chart(dataframe, title="title").mark_line().encode( x='col 0', y='col', color='parameter')
+# st.altair_chart(c, use_container_width=True)
 # areachart
 st.write('This is a area_chart.')
 st.area_chart(dataframe)

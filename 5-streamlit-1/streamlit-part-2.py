@@ -30,6 +30,10 @@ st.write('Score:', score)
 # sidebar -> selectbox
 add_selectbox = st.sidebar.selectbox("Which number do you like?", (10, 20, 30, 40))
 
+add_selectbox2 = st.sidebar.selectbox("pilih aku atau dia", ("aku", "dia"))
+
+
+
 df = pd.DataFrame(np.random.randn(10, 3),
                   columns = ('column %d' % col
                              for col in range(3)))

@@ -8,7 +8,6 @@ from PIL import Image
 import pandas as pd
 import numpy as np
 
-
 # Data Viz Pkg
 import matplotlib.pyplot as plt
 import matplotlib
@@ -35,12 +34,13 @@ st.markdown("The data presented are of 3 different species of penguins - **Adeli
 
 
 if st.button("Meet the Palmer Penguins"):
-    img=Image.open('images/lter_penguins.png')
+    img=Image.open('images/lterpenguins.jpeg')
+
     st.image(img,width=700, caption="We are  Penguin 🐧")
 
     st.markdown(
         "The data was collected and made available by **[Dr. Kristen Gorman](https://www.uaf.edu/cfos/people/faculty/detail/kristen-gorman.php)** and **[Palmer Station, Antarctica, LTER](https://pal.lternet.edu/)**.")
-    images=Image.open('images/meet.png')
+    images=Image.open('images/meet.jpeg')
     st.image(images,width=600)
     #Ballons
     st.balloons()
@@ -51,11 +51,7 @@ st.info(" The dataset contains the  different aspect between the species like Bo
 img=Image.open('images/beek.webp')
 st.image(img,width=700)
 
-
-
-
-st.sidebar.markdown("## Side Panel"
-                    )
+st.sidebar.markdown("## Side Panel")
 st.sidebar.markdown("Use this panel to explore the dataset and create own viz.")
 
 @st.cache_data(persist=True, show_spinner=True)
@@ -71,7 +67,7 @@ def load_data(nrows):
 
 st.markdown("### Click the button below to explore the dataset through my visualization.")
 if st.button("Visualization created by Author "):
-    img=Image.open('images/Palmer Penguins.png')
+    img=Image.open('images/palmerpenguins.png')
     st.image(img,width=700, caption="Viz. created by Author. 🐧")
 
     st.markdown(
@@ -103,9 +99,6 @@ if st.checkbox("Show Raw Data", False):
     st.subheader('Raw data')
     st.write(df)
 
-
-
-
 st.title('Quick  Explore')
 st.sidebar.subheader(' Quick  Explore')
 st.markdown("Tick the box on the side panel to explore the dataset.")
@@ -126,7 +119,6 @@ if st.sidebar.checkbox('Basic info'):
     if st.sidebar.checkbox('Missing Values?'):
         st.subheader('Missing values')
         st.write(df.isnull().sum())
-
 
 
 
@@ -176,16 +168,7 @@ if st.sidebar.checkbox('Graphics'):
     #     fig = sns.pairplot(df,palette="coolwarm")
     #     st.pyplot()
 st.markdown("# Inspire Yourself")
-if st.button("Viz by Tableau Community"):
-    img=Image.open('images/D1.png')
-    st.subheader("Viz by [Scott Renfree-Tuck](https://public.tableau.com/profile/scott.renfree.tuck#!/vizhome/MakeoverMondayW282020-PalmersPenguins/Dashboard2)")
-    st.image(img,width=950)
-    st.subheader("Viz by  [Agata Ketterick](https://public.tableau.com/profile/agata1619#!/vizhome/PalmerPenguinsMakeoverMonday2020_28/Penguins)")
-    img2=Image.open('images/D2.png')
-    st.image(img2,width=950)
-    img3=Image.open('images/D3.png')
-    st.subheader("Viz by [Swati Dave](https://public.tableau.com/profile/swati.dave#!/vizhome/PenguinParadox/PenguinStory)")
-    st.image(img3,width=950)
+
 
 st.markdown(" > Thank you for exploring palmerpenguins. This is my first Streamlit work. Feedbacks are highly welcomed.")
 
